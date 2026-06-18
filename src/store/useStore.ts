@@ -82,7 +82,6 @@ interface State {
   branch: () => Branch
   template: () => Template
   inputImage: () => string
-  resultMedia: () => { src: string; type: 'video' | 'image' }
   loadTemplate: () => void
   clearRun: () => void
   editField: (id: string, value: string | number) => void
@@ -174,19 +173,6 @@ export const useStore = create<State>((set, get) => ({
     if (s.remixSource && s.remixSource.kind !== 'video') return s.remixSource.thumb
     return TEMPLATE_MEDIA[s.template()].input
   },
-  // a remix reproduces the card's own output; otherwise the template's canned result
-  resultMedia: () => {
-    const s = get()
-    if (s.remixSource) {
-      return {
-        src: s.remixSource.thumb,
-        type: s.remixSource.kind === 'video' ? 'video' : 'image',
-      }
-    }
-    const m = TEMPLATE_MEDIA[s.template()]
-    return { src: m.result, type: m.resultType }
-  },
-
   // load the editable fields for the active template (video -> I2V, image -> IMG)
   loadTemplate: () =>
     set({

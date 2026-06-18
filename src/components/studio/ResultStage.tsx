@@ -21,7 +21,16 @@ export function ResultStage({
   const nav = useNavigate()
   const [revealed, setRevealed] = useState(branch === 'nodes')
 
-  const media = useStore((s) => s.resultMedia())
+  // compute locally (NOT a store selector — returning a new object from a
+  // Zustand v5 selector breaks useSyncExternalStore with an infinite loop)
+  const remixSource = useStore((s) => s.remixSource)
+  const tmpl = TEMPLATE_MEDIA[template]
+  const media = remixSource
+    ? {
+        src: remixSource.thumb,
+        type: remixSource.kind === 'video' ? ('video' as const) : ('image' as const),
+      }
+    : { src: tmpl.result, type: tmpl.resultType }
 
   if (runStatus === 'running') {
     return (
