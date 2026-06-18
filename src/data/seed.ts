@@ -152,6 +152,7 @@ export const SHOWROOM: ShowroomItem[] = [
   { id: 's3', title: 'Anime portrait set', author: 'inkwave', avatar: '🐙', thumb: 'editorial-fashion.jpg', kind: 'image', likes: 2100, comments: 120, remixes: 460, model: 'Flux', featured: true, commentList: [{ author: 'fld.motion', avatar: '🦋', text: 'the linework is unreal 🔥', time: '3h' }, { author: 'studio.ko', avatar: '🐼', text: 'what LoRA did you use?', time: '1h' }] },
   { id: 's1', title: 'Neon city flythrough', author: 'maya.r', avatar: '🦊', thumb: 'result-video.mp4', kind: 'video', likes: 1280, comments: 64, remixes: 210, model: 'Wan 2.2', featured: true, commentList: [{ author: 'inkwave', avatar: '🐙', text: 'the motion is so smooth', time: '2h' }, { author: 'pixel.chef', avatar: '🐝', text: 'remixing this tonight', time: '40m' }] },
   { id: 's2', title: 'Product hero — sneaker', author: 'studio.ko', avatar: '🐼', thumb: 'uc-product-photo.jpg', kind: 'product', likes: 940, comments: 31, remixes: 175, model: 'Flux' },
+  { id: 's6', title: 'Golden-hour B-roll — LTX', author: 'fld.motion', avatar: '🦋', thumb: 'ltx-flf2v.mp4', kind: 'video', likes: 870, comments: 27, remixes: 64, model: 'LTX 2.3', featured: true, commentList: [{ author: 'maya.r', avatar: '🦊', text: 'so smooth for LTX 👀', time: '4h' }, { author: 'studio.ko', avatar: '🐼', text: 'the first/last-frame control is clean', time: '2h' }] },
   // forks of the anime set (s3) — these drive the remix-tree panel
   { id: 's3a', title: 'Anime portrait — cyber', author: 'fld.motion', avatar: '🦋', thumb: 'result-image.jpg', kind: 'image', likes: 540, comments: 19, remixes: 41, model: 'Flux', forkedFrom: { id: 's3', author: 'inkwave' } },
   { id: 's3b', title: 'Anime portrait — pastel', author: 'sunsetdsp', avatar: '🦄', thumb: 'uc-enhance-restyle.jpg', kind: 'image', likes: 330, comments: 8, remixes: 22, model: 'Flux', forkedFrom: { id: 's3', author: 'inkwave' } },
@@ -309,7 +310,7 @@ export const USE_CASES: UseCaseOption[] = [
     blurb: 'Generate film-style motion from a prompt.',
     thumb: 'grad-6',
     tags: ['Text to Video'],
-    media: 'result-video.mp4',
+    media: 'ltx-flf2v.mp4',
     mediaType: 'video',
     modality: 'video',
   },
