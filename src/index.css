@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-bg text-ink font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: theme('colors.border-light') transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-border-light rounded-full;
+  }
+}
+
+/* React Flow dark overrides */
+.react-flow__attribution {
+  display: none;
+}
+.react-flow__edge-path {
+  stroke: theme('colors.accent');
+  stroke-width: 1.5;
+}
+.react-flow__handle {
+  background: theme('colors.accent');
+  border: none;
+}
